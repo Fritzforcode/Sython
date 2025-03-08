@@ -5,3 +5,7 @@ from int import MyInt
 from bool import MyBool
 from none import MyNone
 
+s = MyStr.from_python("Hi")
+gprint(s)
+
+

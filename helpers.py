@@ -1,3 +1,5 @@
+from basis import my_repr
+
 def grepr(obj, annotate_fields=True, include_attributes=False, *, indent=None):
     is_compatible = hasattr(obj, "good_repr_compatible")
     def _format(obj, level=0):
@@ -52,7 +54,7 @@ def grepr(obj, annotate_fields=True, include_attributes=False, *, indent=None):
             if allsimple and len(args) <= 3:
                 return '%s(%s)' % (class_name, ', '.join(args)), not args
             return '%s(%s%s)' % (class_name, prefix, sep.join(args)), False
-        return repr(obj), True
+        return my_repr(obj), True
  
     if not(is_compatible) and not(isinstance(obj, list)):
         return repr(obj)

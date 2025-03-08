@@ -15,6 +15,7 @@ class MyNotImplementedClass(PyObject_HEAD):
     __reduce__ = None # pickle isn't (yet) implemented
 
     def __repr__(self, /):
-        return "NotImplemented"
+        from str import MyStr
+        return MyStr.from_python("NotImplemented")
 
 MyNotImplemented = MyNotImplementedClass()

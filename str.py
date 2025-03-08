@@ -33,6 +33,9 @@ class MyStr(PyObject_VAR_HEAD):
             data=_string_to_int_array(value),
             hash=0,
         )
+    def to_python(self):
+        return _int_array_to_string(self.data)
+    
 
     def __new__(cls, data: list[int], hash: int = 0, ob_type=MyStrType):
         key = tuple(data)

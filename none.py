@@ -12,6 +12,7 @@ class MyNoneClass(PyObject_HEAD):
         return False
     
     def __repr__(self, /):
-        return "None"
+        from str import MyStr
+        return MyStr.from_python("None")
 
 MyNone = MyNoneClass()
