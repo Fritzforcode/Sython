@@ -50,7 +50,7 @@ class MyStr(PyObject_VAR_HEAD):
         instance.kind = _determine_str_kind(data)
         # "state" varies accross python implementation
         instance.data = data
-        super().make_reference_compatible(instance)
+        super()._make_reference_compatible(instance)
         # TODO: add remaining fields
         return instance
 

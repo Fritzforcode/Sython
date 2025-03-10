@@ -47,7 +47,7 @@ class MyInt(PyObject_VAR_HEAD):
         super().__init__(ob_type=ob_type)
         self.ob_digit = ob_digit 
         self.ob_size = ob_size
-        super().make_reference_compatible()
+        super()._make_reference_compatible()
     
     def __abs__(self, /):
         if self.ob_size >= 0:
